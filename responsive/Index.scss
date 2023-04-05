@@ -1,0 +1,89 @@
+
+$fontsize: 16px;
+
+$mygreen: rgba(46, 173, 17, 0.838);
+$mymute: rgb(154, 152, 152);
+$mybluebuttom:rgb(50, 50, 255);
+$myblack: black;
+$mywhite: white;
+$text-muted:() ;
+$titlesize: 28px;
+
+body{
+    font-family: Helvetica, sans-serif;
+    font-size: 16px;
+    color: $myblack;
+    background-color: $mywhite;
+}
+
+@mixin colordetexto {
+
+}
+    .cuerpotexto{
+        @include colordetexto();
+        color:$myblack;
+        background-color: $mywhite;
+    }
+    .textoverde{
+        @include colordetexto();
+        color:$mygreen;
+
+
+    }
+    
+    .textomuted{
+        @include colordetexto();
+        color: $mymute;
+    }
+    .textobadge{
+        @include colordetexto();
+        color: $mywhite;
+        background-color: grayscale($color: #828282);
+        align-self: flex-end;
+    }
+    .textonegrita{
+        @include colordetexto();
+        color: $myblack;
+        font-weight:bolder;
+    }
+
+
+    
+@mixin titulo($color) {
+    color: $color;
+    font-size: $titlesize;
+    justify-content: start;
+  
+}
+
+.mytitulo1 {
+  @include titulo($myblack); 
+}
+
+.mytitulo2 {
+  @include titulo($mymute); 
+}
+
+
+
+        .button-basic  {
+            border: none;
+            text-align: center;
+            font-size: $fontsize;
+            color:$mywhite;
+            background-color: $mybluebuttom;
+            border-radius: 8px;
+            padding: 5px;
+            cursor: pointer;
+          }
+          
+          .button-report  {
+            @extend .button-basic;
+            background-color: red;
+          }
+          
+          .button-submit  {
+            @extend .button-basic;
+            background-color: $mymute;
+            color: white;
+          }
